@@ -10,19 +10,8 @@
 <script>
 
 export default {
-  name: 'BaseTemplate',
+  name: 'BaseButton',
   props: [ 'accessibility', 'btnClass', 'btnRoute']
 };
 
 </script>
-
-<style lang="scss">
-
-/*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
-/--------------------------------------*/
-
-
-/*--------------------------------------*/
-
-</style>
