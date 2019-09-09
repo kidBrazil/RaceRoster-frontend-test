@@ -1,3 +1,15 @@
+# Race Roster Front-End testing:
+This repository contains the code that will be delivered to the Race Roster team as part of their interview process for new developers.
+
+## Staging URL:
+I have taken the liberty to host the result of the test on a personal AWS bucket for easy viewing. [Staging Site](http://frontend-test-raceroster.s3-website-us-east-1.amazonaws.com/).
+
+## About Black MESA:
+This test is built upon a Vue.js boilerplate that I developed myself as it allows to get a project off the ground faster without having to fiddle around with vue-cli or package.json. I simply pull a copy from git and start developing the actual code. If you have any questions about Black Mesa specifically I would be happy to answer. There is also a Docs folder that includes a bit more information on it.
+
+-----
+
+
 ![BLACK MESA](https://mdevcdn.digital/images/blackmesalogo3.svg)
 
 # [ IMPORTANT ] :rotating_light:
@@ -63,7 +75,7 @@ BlackMesa can be deployed by cloning this repository and running the dev-environ
 There is also a Vagrant deployment utilizing Ubuntu as a way to ensure environment consistency in a development team or to easily work with remote teams.
 
 ### Ensure Best Practices
-Keep the code clean and follow a few best practices and in the long run your team and your business will thank you. One of the main goals of BlackMesa is to reduce technical debt as much as possible by taking a proactive approach to development. Altough the linting programs help, they are no substitue for a *proper review process*.
+Keep the code clean and follow a few best practices and in the long run your team and your business will thank you. One of the main goals of BlackMesa is to reduce technical debt as much as possible by taking a proactive approach to development. Although the linting programs help, they are no substitute for a *proper review process*.
 
 ### Keep It Modular
 Everything is a module or a component of some sort and can and *SHOULD* be swapped to fit the project's needs.

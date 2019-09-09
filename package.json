@@ -1,6 +1,6 @@
 {
-  "name": "black-mesa-vue",
-  "description": "Complete Vue.JS Boilerplate for kickstarting projects.",
+  "name": "raceroster-frontend-test",
+  "description": "Frontend test completed for Race Roster.",
   "version": "1.0.0",
   "author": "Lucas Moreira <hello@lucasmoreira.dev>",
   "private": true,

@@ -17,10 +17,10 @@ let stagingBuild = true;
 
 // Template INFO - Dictates slug for title and site URL's
 let template = {
-  slug: '%s | Black Mesa | CLIENT PROJECT',
-  slugAddon: ' | Black Mesa | CLIENT PROJECT',
-  stageUrl: 'http://TODO-UPPDATE',
-  liveUrl: 'https://TODO-UPDATE',
+  slug: '%s | Generic Landing Page | Front-End Test',
+  slugAddon: ' | Generic Landing Page | Front-End Test',
+  stageUrl: 'http://localhost:8080/',
+  liveUrl: 'http://frontend-test-raceroster.s3-website-us-east-1.amazonaws.com/',
 };
 
 // Social Media configuration
@@ -28,26 +28,16 @@ let social = {
   appid: 'XXXXXX',
   ogtype: 'website',
   cardtype: 'summary_large_image',
-  twsite: '@Nothinghere',
-  ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
-  twimage: 'social/MDEV-TW-Card-Home_v01.png'
+  twsite: '@GenericCoFake',
+  ogimage: 'social/facebook.jpg',
+  twimage: 'social/twitter.png'
 };
 
 // General Site Wide SEO
 let general = {
-  title: 'TODO-Update-Title',
-  desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+  title: 'Generic Co.',
+  desc: 'We are generic AF.'
 };
-
-// Page Specific SEO SAMPLE.
-// let myPage = {
-//   ogimage: 'myImagePathHere.png',
-//   twimage: 'myImagePathHereForTwitter.png',
-//   title: 'My Page Title',
-//   desc: 'My Page Description'
-// }
-//
-// Don't forget to add it to the EXPORT below.
 
 // Export Objects - Add objects as needed
 export {

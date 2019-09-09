@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Get distributions by checking AWS first...
-S3_LIVE_BUCKET="s3://BUCKET-HERE"
+S3_LIVE_BUCKET="s3://frontend-test-raceroster"
 CF_MAIN_DISTRIBUTION="CF-DST-ID"
 CF_REDIRECT_DISTRIBUTION="CF-DST-ID"
 

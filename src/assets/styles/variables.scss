@@ -1,11 +1,26 @@
 /*-------------------------------------
  * VARIABLES - PROJECT WIDE
 /-------------------------------------*/
-
-// TODO - Update with project style guide
 // Main colors
-$color-brand-primary: #f06404;
-$color-brand-accent: #c4ee1e;
+$color-font-primary: #303030;
+$color-brand-primary: #9013FE;
+$color-brand-accent: #F185CE;
+$color-brand-secondary: #2DCDD8;
+$color-brand-secondary-accent: #67E2B3;
+
+// Form colors
+$color-success: #7ED321;
+$stroke-success: #B7E08A;
+$color-warning: #F96C44;
+$stroke-warning: #F3A58F;
+$color-danger: #D0021B;
+$stroke-danger: #E78490;
+$color-default: #ECEFF1;
+$stroke-default: #F5F5F5;
+
+// Link Colors
+$color-link: #3380FF;
+
 $color-brand-bkg: #0f1618;
 $bkg-light-grey: #fafafa;
 $black: #000;
@@ -13,18 +28,18 @@ $white: #fff;
 
 
 // Main Font
-$main-font: 'Roboto', 'Helvetica', sans-serif;
+$main-font: 'Open Sans', sans-serif;
 $heading-weight: 700;
 $subheading-weight: 500;
 $body-weight: 300;
 
 // Sizing Variables
-
-// Spacing Variables
-
-// Button Variables
-
+$font-size-h6: 16px;
+$font-size-h5: 18px;
+$font-size-h4: 22px;
+$font-size-h3: 26px;
+$font-size-h2: 30px;
+$font-size-h1: 36px;
+$font-size-body: 16px;
 // Radius Variables
 $standard-radius: 4px;
-
-//Clipping Paths

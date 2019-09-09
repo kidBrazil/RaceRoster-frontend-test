@@ -49,13 +49,12 @@ const setPath = function(folderName) {
 }
 
 // SEO & Sitemap Configuration
-const hostDomainUrl = "https://EXAMPLE"
+const hostDomainUrl = "http://frontend-test-raceroster.s3-website-us-east-1.amazonaws.com/"
 const sitemapFile = hostDomainUrl + "/sitemap.xml"
 // [ Robots.TXT Configuration ]
 // Fully automated robots.txt generation based on policy listed
 // below. Remember to disalow bots during staging and enable for
 // prod environment.
-// TODO - Update robots.txt for Staging & Production
 // While dev is being done switch to NO CRAWL
 const robotOptions = {
   policy: [
@@ -67,8 +66,6 @@ const robotOptions = {
     {
       userAgent: "*",
       allow: "/",
-      //disallow: "/",
-      //disallow: "/search",
       crawlDelay: 10,
     }
   ],
@@ -77,12 +74,10 @@ const robotOptions = {
   host: hostDomainUrl
 }
 
-// Prerenderer Routes - TODO - Update according to present routes
 // These tell the prerenreder which routes to render..
 // These should match routes.js
 const prerenderRoutes = [
-  '/',
-  '/about'
+  '/'
 ]
 
 // Production Environment Exports
@@ -115,10 +110,8 @@ module.exports = merge(common, {
       statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
-      // CHANGE COLOR OF THEME - TODO
-      background: '#f06404',
-      // CHANGE PROJECT TITLE - TODO
-      title: 'Black MEsa | The Start Of Something New',
+      background: '#9013FE',
+      title: 'Generic Landing Page | Front-End Coding Test',
       // Icons to export
       icons: {
         android: true,
@@ -176,14 +169,7 @@ module.exports = merge(common, {
       },
       // Process page before output..
       postProcess(renderedRoute) {
-        // Remove active classes from prerendered routes
         renderedRoute.html = renderedRoute.html
-          //.replace('--mask-active', '')
-          //.replace('--nav-active', '')
-          //.replace('--active', '')
-          //.replace('<body>','<body class="u-freeze-scroll">')
-          //.replace('id="map"', '');
-
         return renderedRoute;
       },
       // Renderer Options
