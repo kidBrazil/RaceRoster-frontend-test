@@ -1,12 +1,12 @@
 /*-------------------------------------
- *	TYPOGRAPHY
+ *  TYPOGRAPHY
 /-------------------------------------*/
 
 /* Main */
 body {
   font-family: $main-font;
-  font-size: 16px;
-  color: $black;
+  font-size: $font-size-body;
+  color: $color-font-primary;
 }
 
 /* Headings & Body Copy */
@@ -29,44 +29,44 @@ h6,.h6, {
 
 // Responsive Font Size Maps
 $p-font-sizes: (
-  null  : 15px,
-  $landscape : 20px,
+  null  : $font-size-body * .8,
+  $landscape : $font-size-body,
 );
 
 $h1-font-sizes: (
-  null  : 50px,
-  $landscape: 120px
+  null  : $font-size-h1 * .7,
+  $landscape: $font-size-h1
 );
 
 $h2-font-sizes: (
-  null  : 40px,
-  $landscape: 80px
+  null  : $font-size-h2 * .7,
+  $landscape: $font-size-h2
 );
 
 $h3-font-sizes: (
-  null  : 35px,
-  $landscape: 70px
+  null  : $font-size-h3 * .7,
+  $landscape: $font-size-h3
 );
 
 $h4-font-sizes: (
-  null  : 30px,
-  $landscape: 60px
+  null  : $font-size-h4 * .7,
+  $landscape: $font-size-h4
 );
 
 $h5-font-sizes: (
-  null  : 20px,
-  $landscape: 50px
+  null  : $font-size-h5 * .7,
+  $landscape: $font-size-h5
 );
 
 $h6-font-sizes: (
-  null  : 15px,
-  $landscape: 30px
+  null  : $font-size-h6 * .7,
+  $landscape: $font-size-h6
 );
 
 // Links
 $link-font-sizes: (
-  null  : 15px,
-  $landscape: 25px
+  null  : $font-size-body * .8,
+  $landscape: $font-size-body
 );
 
 // Responsive Font-Size Mixing (Function Only)
@@ -88,42 +88,62 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
-  line-height: 1.8;
+  line-height: 1.4;
   font-weight: 400;
+  letter-spacing: .33px;
   @include font-size($p-font-sizes);
 }
 
 h1,
 .h1 {
+  margin-bottom: 50px;
+  letter-spacing: .75px;
+  line-height: 49px;
   @include font-size($h1-font-sizes);
 }
 
 h2,
 .h2 {
+  margin-bottom: 14px;
+  letter-spacing: .63px;
+  line-height: 41px;
   @include font-size($h2-font-sizes);
 }
 
 h3,
 .h3 {
+  margin-bottom: 10px;
+  letter-spacing: .54px;
+  line-height: 36px;
   @include font-size($h3-font-sizes);
 }
 
 h4,
 .h4 {
+  margin-bottom: 10px;
+  letter-spacing: .46px;
+  line-height: 30px;
   @include font-size($h4-font-sizes);
 }
 
 h5,
 .h5 {
+  margin-bottom: 10px;
+  letter-spacing: .38px;
+  line-height: 24px;
   @include font-size($h5-font-sizes);
 }
 
 h6,
 .h6 {
+  margin-bottom: 10px;
+  letter-spacing: .33px;
+  line-height: 22px;
   @include font-size($h6-font-sizes);
 }
 
 .blk-main-nav-links {
+  margin-bottom: 10px;
   @include font-size($link-font-sizes);
 }
 
@@ -132,12 +152,19 @@ a {
   font-family: $main-font;
   color: inherit;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: 600;
   text-decoration: inherit;
+  padding-bottom: 6px;
+  border-bottom: 3px solid $color-link;
+  color: $color-link;
+  display: inline-block;
+  transition: all .4s;
+  letter-spacing: .33px;
 
   &:hover {
     text-decoration: none;
-    color: inherit;
+    color: $color-brand-secondary;
+    border-bottom: 4px solid $color-brand-secondary;
   }
 }
 

@@ -1,44 +1,154 @@
 <template lang="pug">
-  section.blk-main-content
-    //- Use comments witn `-`
-    //- This omits them from output.
+  section.styleguide-section.blk-main-wrapper
+    //- Main Section Title
     h1
-      |Base Template
+      |Mini Design System
+    //- Split Component
+    fifty-fifty(:top="true")
+      //- Left Side Split
+      template(v-slot:leftSlot)
+        //-Section Title
+        h5.u-uppercase.spacing-large
+          |Brand Colours
+        //- Color Samples
+        .blk-sampler( v-for="sample in colorSamples")
+          .h5.u-light(v-html="sample.title")
+          .flex.flex-vert-center.flex-hor-start
+            .blk-color-swatch( v-for="swatch in sample.swatches" :class="swatch")
+              span.u-bold
+                |TEXT
+
+      //- Right Side Split
+      template(v-slot:rightSlot)
+        //-Section Title
+        h5.u-uppercase.spacing-large
+          |Typography
+        .h5.u-light.spacing-large
+          |Open Sans - Google font (headers + body)
+
+        //- Headers
+        h6.u-bold
+          |Header 6 - 16px
+          span.u-light Subheader
+        h5.u-bold
+          |Header 5 - 18px
+          span.u-light Subheader
+        h4.u-bold
+          |Header 4 - 22px
+          span.u-light Subheader
+        h3.u-bold
+          |Header 3 - 26px
+          span.u-light Subheader
+        h2.u-bold
+          |Header 2 - 30px
+          span.u-light Subheader
+        h1.u-bold
+          |Header 1 - 36px
+          span.u-light Subheader
+        //- Main Paragraph
+        p.spacing-xl
+          span.u-bold
+            |Body text - 16px 1.4 line height regular font-weight:
+          |A beautiful little sunset. Talent is a pursued interest. That is to say, anything you practice you can do. This is probably the greatest thing that's ever happened in my life. These things happen automatically. All you have to do is just let them happen.
+
+        //- Link
+        a.spacing-large(href="#" title="Placeholder Link")
+          |Link to somewhere (semibold + custom underline)
+        //- Buttons Section
+        .h5.u-bold.u-uppercase
+          |Buttons
+        //- Buttons Pill Style
+        .flex.flex-vert-center.flex-hor-start.flex-wrap.spacing-large
+          .blk-btn-sample(v-for="button in pillButtons")
+            p
+              |{{button.btnName}}
+            main-button(accessibility="Test Button" :btnClass="button.btnClass" btnRoute="#")
+              | Sign Up
+        //- Buttons Square Style
+        .flex.flex-vert-center.flex-hor-start.flex-wrap
+          .blk-btn-sample(v-for="button in squareButtons")
+            p
+              |{{button.btnName}}
+            main-button(accessibility="Test Button" :btnClass="button.btnClass" btnRoute="#")
+              | Sign Up
 </template>
 
 
 
 
 <script>
-// Import SEO From File
-import { stagingBuild, template, social, general }       from '../../seo-meta.js';
+import FiftyFifty from '../modules/fifty-fifty.vue';
+import MainButton from '../modules/button.vue';
 
 export default {
-  name: 'BaseTemplate',
+  name: 'StyleGuide',
 
   data: function(){
     return {
-    };
-  },
-  // Meta SEO Function
-  metaInfo() {
-    return {
-      title: general.title,
-      meta: [
-        // SEO
-        { vmid: 'desc', name: 'description', content: general.desc },
-        { vmid: 'ogtitle', property: 'og:title', content: general.title + template.slugAddon },
-        { vmid: 'ogimage', property: 'og:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.ogimage) },
-        { vmid: 'ogdesc', property: 'og:description', content: general.desc },
-        { vmid: 'twtitle', name: 'twitter:title', content:  general.title + template.slugAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: (stagingBuild ? template.stageUrl : template.liveUrl) + this.loadImage(social.twimage) },
-        { vmid: 'twdesc', name: 'twitter:description', content: general.desc }
+      colorSamples: [
+        {
+          title: 'Primary Brand Colour',
+          swatches: [
+            '--primary',
+            '--primary-g'
+          ]
+        },
+        {
+          title: 'Secondary Brand Colour',
+          swatches: [
+            '--secondary',
+            '--secondary-g'
+          ]
+        },
+        {
+          title: 'Success&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Warning&nbsp;&nbsp;&nbsp;&nbsp;Danger&nbsp;&nbsp;&nbsp;&nbsp;Default',
+          swatches: [
+            '--success',
+            '--warning',
+            '--danger',
+            '--default'
+          ]
+        },
+        {
+          title: 'Font',
+          swatches: [
+            '--font'
+          ]
+        },
+      ],
+      pillButtons: [
+        {
+          btnName: 'Pill small',
+          btnClass: 'blk-base-btn --pill --small'
+        },
+        {
+          btnName: 'Pill medium',
+          btnClass: 'blk-base-btn --pill --med'
+        },
+        {
+          btnName: 'Pill large',
+          btnClass: 'blk-base-btn --pill --large'
+        },
+      ],
+      squareButtons: [
+        {
+          btnName: 'Small',
+          btnClass: 'blk-base-btn --small'
+        },
+        {
+          btnName: 'Medium',
+          btnClass: 'blk-base-btn --med'
+        },
+        {
+          btnName: 'Large',
+          btnClass: 'blk-base-btn --large'
+        },
       ]
     };
   },
-
-  mounted: function(){
-    console.log('COMPONENT NAME Mounted');
+  components: {
+    'fifty-fifty': FiftyFifty,
+    'main-button': MainButton
   }
 };
 </script>
@@ -50,8 +160,57 @@ export default {
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
+.styleguide-section {
+  padding: 80px 0;
+}
+// Swatches
+.blk-color-swatch {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 20px 20px 30px 0;
+  background: grey;
+  color: $white;
+  font-size: 18px;
+  transition: all .4s;
 
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
 
+  &:last-child {
+    margin-right: 0;
+  }
+
+  span {
+    @include center(both);
+  }
+}
+
+// Brand Colors
+.--primary {
+  background: $color-brand-primary;
+}
+.--primary-g {
+  background: linear-gradient(41.55deg, $color-brand-primary 0%, $color-brand-accent 100%);
+}
+.--secondary {
+  background: $color-brand-secondary;
+}
+.--secondary-g {
+  background: linear-gradient(221.55deg, $color-brand-secondary-accent 0%, $color-brand-secondary 100%);
+}
+.--font {
+  background: $color-font-primary;
+}
+
+.blk-btn-sample {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
 /*--------------------------------------*/
 
 </style>

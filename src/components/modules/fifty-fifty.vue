@@ -1,11 +1,11 @@
 <template lang="pug">
   //- Split Component
-  .blk-split.flex.flex-hor-between.flex-vert-center(:class="{'--reversed' : reversed' , '--top' : top}")
+  .blk-split.flex.flex-hor-between.flex-vert-center( :class="{ '--reversed': reversed, '--top': top }")
     //- Animation class is dynamic passed as prop
-    .blk-split-5(:class="animClassLeft" v-in-viewport)
+    .blk-split-5( :class="animClassLeft" v-in-viewport)
       slot(name="leftSlot")
     //- Second slot
-    .blk-split-5(:class="animClassRight" v-in-viewport)
+    .blk-split-5( :class="animClassRight" v-in-viewport)
       slot(name="rightSlot")
 </template>
 
