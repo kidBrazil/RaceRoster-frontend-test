@@ -6,47 +6,42 @@
  *	styles including colour and typography
  *
 /-------------------------------------*/
-
-/* Base Button */
-// TODO - Replace blackmesa-BTN
-.blackmesa-btn {
-  width: auto;
-  padding: 10px;
+.blk-base-btn {
+  font-size: $font-size-body;
+  color: $color-font-primary;
+  background: $color-default;
   display: inline-block;
+  width: auto;
+  border: none;
   text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .4s;
-  position: relative;
-  vertical-align: middle;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: .4s;
 
-  &:before,
-  &:after {
-    @include pseudo();
-    width: 100%;
-    height: 100%;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    color: lighten($color-font-primary, 10%);
+    background: darken($color-default, 5%);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
 
-  &:before {
-    top: 0;
-    left: 0;
+  // Button Sizing
+  &.--small {
+    padding: 5px 15px;
   }
 
-  &:after {
-    bottom: 0;
-    right: 0;
+  &.--med {
+    padding: 10px 25px;
   }
 
-  @media #{$portrait} {
-    padding: 15px 20px;
+  &.--large {
+    padding: 15px 35px;
   }
 
-  @media #{$tablet-lnd-only} {
-    padding: 10px 15px;
-  }
-
-  @media #{$phone-only} {
-    padding: 8px 10px;
-    letter-spacing: 1px;
+  // Pill Modifier
+  &.--pill{
+    border-radius: 25px;
   }
 }

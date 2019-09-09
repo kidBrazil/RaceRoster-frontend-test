@@ -54,19 +54,21 @@
         //- Link
         a.spacing-large(href="#" title="Placeholder Link")
           |Link to somewhere (semibold + custom underline)
-
-        .h5.u-bold
+        //- Buttons Section
+        .h5.u-bold.u-uppercase
           |Buttons
         //- Buttons Pill Style
-        .flex.flex-vert-center.flex-hor-start
+        .flex.flex-vert-center.flex-hor-start.flex-wrap.spacing-large
           .blk-btn-sample(v-for="button in pillButtons")
-            |{{button.btnName}}
+            p
+              |{{button.btnName}}
             main-button(accessibility="Test Button" :btnClass="button.btnClass" btnRoute="#")
               | Sign Up
         //- Buttons Square Style
-        .flex.flex-vert-center.flex-hor-start
+        .flex.flex-vert-center.flex-hor-start.flex-wrap
           .blk-btn-sample(v-for="button in squareButtons")
-            |{{button.btnName}}
+            p
+              |{{button.btnName}}
             main-button(accessibility="Test Button" :btnClass="button.btnClass" btnRoute="#")
               | Sign Up
 </template>
@@ -116,30 +118,30 @@ export default {
       ],
       pillButtons: [
         {
-          btnName: 'Pill Small',
-          btnClass: 'blk-btn-pill --small'
+          btnName: 'Pill small',
+          btnClass: 'blk-base-btn --pill --small'
         },
         {
-          btnName: 'Pill Medium',
-          btnClass: 'blk-btn-pill --med'
+          btnName: 'Pill medium',
+          btnClass: 'blk-base-btn --pill --med'
         },
         {
-          btnName: 'Pill Large',
-          btnClass: 'blk-btn-pill --large'
+          btnName: 'Pill large',
+          btnClass: 'blk-base-btn --pill --large'
         },
       ],
       squareButtons: [
         {
           btnName: 'Small',
-          btnClass: 'blk-btn-square --small'
+          btnClass: 'blk-base-btn --small'
         },
         {
           btnName: 'Medium',
-          btnClass: 'blk-btn-square --med'
+          btnClass: 'blk-base-btn --med'
         },
         {
           btnName: 'Large',
-          btnClass: 'blk-btn-square --large'
+          btnClass: 'blk-base-btn --large'
         },
       ]
     };
@@ -159,7 +161,7 @@ export default {
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
 .styleguide-section {
-  padding-top: 80px;
+  padding: 80px 0;
 }
 // Swatches
 .blk-color-swatch {
@@ -171,7 +173,7 @@ export default {
   color: $white;
   font-size: 18px;
   transition: all .4s;
-  
+
   &:hover {
     transform: scale3d(1.1, 1.1, 1.1);
   }
@@ -200,6 +202,14 @@ export default {
 }
 .--font {
   background: $color-font-primary;
+}
+
+.blk-btn-sample {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 /*--------------------------------------*/
 
