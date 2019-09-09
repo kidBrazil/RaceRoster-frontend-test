@@ -100,4 +100,23 @@ textarea {
   position: relative;
 }
 
-
+// Form Error Colors
+/* Disabled for important so it can override on all instances */
+/* stylelint-disable */
+.--success {
+  background: $color-success !important;
+  border: 4px solid $stroke-success !important;
+}
+.--warning {
+  background: $color-warning !important;
+  border: 4px solid $stroke-warning !important;
+}
+.--danger {
+  background: $color-danger !important;
+  border: 4px solid $stroke-danger !important;
+}
+.--default {
+  background: $color-default !important;
+  border: 4px solid $stroke-default !important;
+}
+/* stylelint-enable */
