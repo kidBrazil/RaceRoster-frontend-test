@@ -10,6 +10,9 @@ import VueRouter from 'vue-router';
 import Meta from 'vue-meta'
 // App Entrypoint
 import App from './App.vue';
+// Youtube Embed Component
+import VueYouTubeEmbed from 'vue-youtube-embed'
+Vue.use(VueYouTubeEmbed)
 
 // Import Routes & Central Stores
 import { routes  } from './routes.js';
