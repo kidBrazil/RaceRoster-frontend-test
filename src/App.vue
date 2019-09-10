@@ -130,7 +130,6 @@ export default {
 
     // Fix Padding under nav
     this.navHeight = this.$refs.navElement.$el.clientHeight;
-    console.log(this.navHeight);
   },
 
   updated: function() {
