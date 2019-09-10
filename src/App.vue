@@ -1,5 +1,5 @@
 <template lang="pug">
-  main(id="app")
+  main(id="app" :style='{paddingTop: navHeight + "px"}')
     //-Skip Navigatio Accessbility
     button(href="#mainContent"
       title="Skip to main content"
@@ -9,7 +9,7 @@
         |Skip To Main Content
 
     //- Main Navigation
-    main-navigation
+    main-navigation(ref="navElement")
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -24,7 +24,6 @@
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
-import MainFooter from './components/shared/navigation.vue';
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from './seo-meta.js';
@@ -35,7 +34,8 @@ export default {
   data: function(){
     return {
       cookies: false,
-      showCookies: false
+      showCookies: false,
+      navHeight: null
    };
   },
   // Meta SEO Function
@@ -127,6 +127,10 @@ export default {
         console.log('Made by Lucas Moreira 😜');
       }
     });
+
+    // Fix Padding under nav
+    this.navHeight = this.$refs.navElement.$el.clientHeight;
+    console.log(this.navHeight);
   },
 
   updated: function() {
@@ -148,8 +152,7 @@ export default {
 
   components: {
     'main-navigation' : MainNavigation,
-    'cookie-popup'    : CookiePopup,
-    'main-footer'     : MainFooter
+    'cookie-popup'    : CookiePopup
   },
 
   methods: {

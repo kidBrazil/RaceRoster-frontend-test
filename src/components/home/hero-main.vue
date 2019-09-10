@@ -1,6 +1,13 @@
 <template lang="pug">
-  .blk-image
-    img(:src="loadImage(homeBrand)")
+  .blk-main-hero.u-parallax
+    .blk-main-wrapper
+      .blk-hero-content
+        h1.u-bold
+          |Make event management a breeze
+        h2.u-light
+          |ACME Events Inc. makes making beautiful event landing pages a DIY adventure.
+        main-button(accessibility="Book A Demo" btnClass="blk-base-btn --pill --large --secondary-g" btnRoute="#")
+          |Book A Demo
 </template>
 
 
@@ -11,16 +18,8 @@ export default {
   name: 'MainHero',
   data: function() {
     return{
-      homeBrand: 'blackmesalogo2.svg'
+      heroBackground: 'hero-background.png'
     };
-  },
-
-  methods:{
-    // Get Compiled image Paths
-
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
   }
 };
 
@@ -31,15 +30,19 @@ export default {
 /*-------------------------------------*/
 /* HERO MAIN Component Styles
 /--------------------------------------*/
-.blk-image {
-  width: 50%;
-  margin: 120px auto 60px;
-
-  img {
-    width: 100%;
-  }
+.blk-main-hero {
+  background-image: url('../../assets/images/hero-background.png');
+  padding: 85px 0;
 }
 
+.blk-hero-content {
+  width: 80%;
+  margin: 0 auto;
+
+  @media #{$landscape} {
+    width: 50%;
+  }
+}
 /*--------------------------------------*/
 
 </style>

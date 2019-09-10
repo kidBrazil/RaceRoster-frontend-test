@@ -1,10 +1,39 @@
 <template lang="pug">
   //- Wrapper Container
   section.blk-main-content.u-text-center
-    //- Hero
+    //- Main Hero Component
     hero-main
     //- Main Footer
     main-footer
+
+    h1
+      | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+    h1
+      | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
 </template>
 
 
@@ -14,8 +43,6 @@
 
 //Local Component registration
 import HeroMain           from './hero-main.vue';
-import MainFooter   from '../shared/main-footer.vue';
-import TestDiv   from '../modules/sixty-forty.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 
@@ -46,9 +73,7 @@ export default{
   },
 
   components: {
-    'hero-main'         : HeroMain,
-    'main-footer'       : MainFooter,
-    'test-div'          : TestDiv
+    'hero-main'         : HeroMain
   }
 };
 </script>
@@ -60,7 +85,6 @@ export default{
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
-
 
 /*--------------------------------------*/
 

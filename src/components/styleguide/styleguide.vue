@@ -78,7 +78,6 @@
 
 <script>
 import FiftyFifty from '../modules/fifty-fifty.vue';
-import MainButton from '../modules/button.vue';
 
 export default {
   name: 'StyleGuide',
@@ -147,8 +146,7 @@ export default {
     };
   },
   components: {
-    'fifty-fifty': FiftyFifty,
-    'main-button': MainButton
+    'fifty-fifty': FiftyFifty
   }
 };
 </script>
