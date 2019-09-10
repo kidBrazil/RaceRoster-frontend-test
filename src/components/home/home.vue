@@ -21,7 +21,10 @@
     section.blk-dark-Background.u-text-center
       youtube(video-id="m_KBvP0_8Tc")
     //- PreFooter
-    pre-footer
+    pre-footer(
+      :sections="prefooterData.sections"
+      :contact="prefooterData.contactInfo"
+      :map="prefooterData.mapInfo")
     //- Main Footer
     main-footer
 </template>
@@ -31,6 +34,7 @@
 import HeroMain           from './hero-main.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
+import { preFooter } from '../../project-data.js';
 
 export default{
   name: 'HomePage',
@@ -38,7 +42,7 @@ export default{
 
   data: function(){
     return {
-
+      prefooterData: preFooter
     };
   },
   // Meta SEO Function

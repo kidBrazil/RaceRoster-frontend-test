@@ -57,10 +57,10 @@ let socialMedia = {
 
 // PreFooter
 let preFooter = {
-  sections = [
+  sections: [
     {
-      category: 'Features'
-      links = [
+      category: 'Features',
+      links: [
         {
           linkName: 'Event organizer tools',
           a11y: 'Event Tools',
@@ -84,8 +84,8 @@ let preFooter = {
       ]
     },
     {
-      category: 'Tools'
-      links = [
+      category: 'Tools',
+      links: [
         {
           linkName: 'Dashboard maker',
           a11y: 'Dashboard maker',
@@ -109,15 +109,15 @@ let preFooter = {
       ]
     },
   ],
-  contactInfo = {
+  contactInfo: {
     phone: '1-888-555-5555',
     email: 'example@example.com',
     address: '123 Fake Street, London, ON A1B2C3'
-  }
-  mapInfo = {
+  },
+  mapInfo: {
 
   }
 }
 
 // Export named variables
-export { navigation, generalApp, socialMedia };
+export { navigation, generalApp, socialMedia, preFooter };
