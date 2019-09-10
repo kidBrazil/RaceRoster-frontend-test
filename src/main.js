@@ -270,11 +270,13 @@ Vue.mixin({
 // Centralizes components to ease on loading
 import UniversalImage     from '../src/components/modules/universal-img.vue';
 import MainFooter         from '../src/components/shared/main-footer.vue';
+import PreFooter         from '../src/components/shared/pre-footer.vue';
 import MainButton         from '../src/components/modules/button.vue';
 
 // Global Component Assign
 Vue.component('universal-image', UniversalImage);
 Vue.component('main-footer', MainFooter);
+Vue.component('pre-footer', PreFooter);
 Vue.component('main-button', MainButton);
 
 // [ Main Vue Instance ] ----------------------------
