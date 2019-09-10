@@ -1,39 +1,24 @@
 <template lang="pug">
   //- Wrapper Container
-  section.blk-main-content.u-text-center
+  section.blk-main-content
     //- Main Hero Component
-    hero-main
+    hero-main.u-text-center
     //- Main Footer
     main-footer
-
-    h1
-      | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
-    h1
-      | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
-
-    h1
-    | TEST
+    //- Intro Content Block
+    section.blk-itntro
+      .blk-main-wrapper.flex.flex-hor-between.flex-vert-start
+        .blk-intro-image
+          universal-image( source="heart-lamps.png" a11y="Make your events memorable!")
+        .blk-intro-content
+          h2.u-bold
+            |Make your ticket holders happy
+          p
+            |A beautiful little sunset. Talent is a pursued interest. That is to say, anything you practice you can do. This is probably the greatest thing that's ever happened in my life. These things happen automatically. All you have to do is just let them happen.
+          p
+            |Just let go - and fall like a little waterfall. Nothing's gonna make your husband or wife madder than coming home and having a snow-covered dinner. Just pretend you are a whisper floating across a mountain. Zip. That easy.
+          a.blk-main-link.spacing-large(href="#" title="View our feature list.")
+            |View full feature list (semibold + custom underline)
 </template>
 
 
@@ -85,7 +70,10 @@ export default{
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
-
+.blk-itntro {
+  width: 100%;
+  position: relative;
+}
 /*--------------------------------------*/
 
 </style>
