@@ -167,3 +167,11 @@
 .u-pointer {
   cursor: pointer;
 }
+
+// u-parallax
+.u-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

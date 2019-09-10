@@ -1,5 +1,5 @@
 <template lang="pug">
-  main(id="app")
+  main(id="app" :style='{paddingTop: navHeight + "px"}')
     //-Skip Navigatio Accessbility
     button(href="#mainContent"
       title="Skip to main content"
@@ -9,7 +9,7 @@
         |Skip To Main Content
 
     //- Main Navigation
-    main-navigation
+    main-navigation(ref="navElement")
     //- Transition Wrapper
     transition(name="fade")
       //- Router View
@@ -34,7 +34,8 @@ export default {
   data: function(){
     return {
       cookies: false,
-      showCookies: false
+      showCookies: false,
+      navHeight: null
    };
   },
   // Meta SEO Function
@@ -126,6 +127,10 @@ export default {
         console.log('Made by Lucas Moreira 😜');
       }
     });
+
+    // Fix Padding under nav
+    this.navHeight = this.$refs.navElement.$el.clientHeight;
+    console.log(this.navHeight);
   },
 
   updated: function() {

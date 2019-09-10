@@ -1,10 +1,39 @@
 <template lang="pug">
   //- Wrapper Container
   section.blk-main-content.u-text-center
-    //- Hero
+    //- Main Hero Component
     hero-main
     //- Main Footer
     main-footer
+
+    h1
+      | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+    h1
+      | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
+
+    h1
+    | TEST
 </template>
 
 
@@ -56,7 +85,6 @@ export default{
 /*-------------------------------------*/
 /* HOME Component Styles
 /--------------------------------------*/
-
 
 /*--------------------------------------*/
 
