@@ -266,9 +266,11 @@ Vue.mixin({
 // Global Component Registration
 // Centralizes components to ease on loading
 import UniversalImage     from '../src/components/modules/universal-img.vue';
+import MainFooter         from '../src/components/shared/main-footer.vue';
 
 // Global Component Assign
 Vue.component('universal-image', UniversalImage);
+Vue.component('main-footer', MainFooter);
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({

@@ -24,7 +24,6 @@
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
-import MainFooter from './components/shared/navigation.vue';
 import CookiePopup    from './components/shared/cookies.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from './seo-meta.js';
@@ -148,8 +147,7 @@ export default {
 
   components: {
     'main-navigation' : MainNavigation,
-    'cookie-popup'    : CookiePopup,
-    'main-footer'     : MainFooter
+    'cookie-popup'    : CookiePopup
   },
 
   methods: {
