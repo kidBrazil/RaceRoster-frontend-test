@@ -143,12 +143,27 @@ h6,
 }
 
 .blk-main-nav-links {
-  margin-bottom: 10px;
   @include font-size($link-font-sizes);
 }
 
 /* Link Reset / Base Inherit */
 a {
+  font-family: $main-font;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: inherit;
+  color: inherit;
+  display: inline-block;
+  transition: all .4s;
+  letter-spacing: .33px;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.blk-main-link {
   font-family: $main-font;
   color: inherit;
   font-size: inherit;
@@ -164,7 +179,7 @@ a {
   &:hover {
     text-decoration: none;
     color: $color-brand-secondary;
-    border-bottom: 4px solid $color-brand-secondary;
+    border-bottom: 3px solid $color-brand-secondary;
   }
 }
 

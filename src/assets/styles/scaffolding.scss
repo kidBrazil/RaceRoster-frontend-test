@@ -13,12 +13,10 @@
 
   @media #{$tablet-prt-only} {
     max-width: 800px;
-    width: 76%;
   }
 
   @media #{$tablet-lnd-only} {
     max-width: 900px;
-    width: 76%;
   }
 
   @media #{$laptop-only} {
@@ -26,11 +24,11 @@
   }
 
   @media #{$desktop-only} {
-    max-width: 1300px;
+    max-width: 1440px;
   }
 
   @media #{$xl-up} {
-    max-width: 1500px;
+    max-width: 1920px;
   }
 
   @media #{$phone-only} {

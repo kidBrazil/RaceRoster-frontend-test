@@ -2,7 +2,7 @@
   //- Nav element with Aria
   nav.blk-main-nav(aria-role="navigation" role="navigation")
     //- Wrapper Class
-    .blk-main-wrapper.flex.flex-nowrap.flex-hor-between.flex-vert-end
+    .blk-main-wrapper.flex.flex-nowrap.flex-hor-between.flex-vert-center
       //- Logo Link
       a(:href="homeLink" :title="homeTitle" class="blk-main-nav-branding")
         img(:src="loadImage(homeBrand)")
@@ -12,11 +12,11 @@
           v-for="link in links"
           :to="link.route"
           active-class="--active"
+          :class="link.linkClass"
           :title="link.linkTitle"
           aria-role="menuitem"
           exact)
             |{{ link.linkName  }}
-    //button(@click="change()")CHANGE
 </template>
 
 
@@ -66,18 +66,17 @@ export default{
   position: fixed;
   top: 0;
   left: 0;
-  padding: 35px 0;
+  padding: 10px 0;
   z-index: 10;
   transition: all, .3s;
-  background: rgba(51,51,51,0);
+  background: $color-font-primary;
 
   img {
     width: 100%;
   }
 
   .blk-main-nav-branding {
-    max-width: 83px;
-    min-width: 73px;
+    min-width: 120px;
     height: auto;
     width: 10%;
     opacity: 1;
@@ -97,6 +96,7 @@ export default{
     margin: 0 10px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0);
     transition: all, .3s;
+    color: $white;
 
     &:hover {
       text-shadow: 1px 1px 3px rgba(0,0,0,.6);
@@ -107,15 +107,6 @@ export default{
     }
   }
 }
-
-.blk-main-nav-visibility {
-  background: rgba(51,51,51,.6);
-
-  &:hover {
-    background: rgba(51,51,51,.9);
-  }
-}
-
 /*--------------------------------------*/
 
 </style>

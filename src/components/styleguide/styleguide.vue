@@ -52,7 +52,7 @@
           |A beautiful little sunset. Talent is a pursued interest. That is to say, anything you practice you can do. This is probably the greatest thing that's ever happened in my life. These things happen automatically. All you have to do is just let them happen.
 
         //- Link
-        a.spacing-large(href="#" title="Placeholder Link")
+        a.blk-main-link.spacing-large(href="#" title="Placeholder Link")
           |Link to somewhere (semibold + custom underline)
         //- Buttons Section
         .h5.u-bold.u-uppercase
@@ -185,23 +185,6 @@ export default {
   span {
     @include center(both);
   }
-}
-
-// Brand Colors
-.--primary {
-  background: $color-brand-primary;
-}
-.--primary-g {
-  background: linear-gradient(41.55deg, $color-brand-primary 0%, $color-brand-accent 100%);
-}
-.--secondary {
-  background: $color-brand-secondary;
-}
-.--secondary-g {
-  background: linear-gradient(221.55deg, $color-brand-secondary-accent 0%, $color-brand-secondary 100%);
-}
-.--font {
-  background: $color-font-primary;
 }
 
 .blk-btn-sample {

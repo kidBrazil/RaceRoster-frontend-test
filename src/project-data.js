@@ -13,28 +13,25 @@ let navigation = {
   // Refer to routes.js file for available routes.
   links: [
     {
-      linkName: 'Link 1',
-      linkTitle: 'Link 1',
-      route: '/'
+      linkName: 'Log-In',
+      linkTitle: 'Login to your account.',
+      linkClass: false,
+      route: '#'
     },
     {
-      linkName: 'Link 2',
-      linkTitle: 'Link 2',
-      route: '/about'
+      linkName: 'Sign-Up',
+      linkTitle: 'Sign Up to our service.',
+      linkClass: 'blk-base-btn --pill --med --primary-g',
+      route: '#'
     },
-    {
-      linkName: 'Link 3',
-      linkTitle: 'Link 3',
-      route: '/auth'
-    }
   ]
 };
 
 // General App data
 let generalApp = {
   homeLink: '#',
-  homeTitle: 'Home',
-  homeBrand: 'main-logo.png'
+  homeTitle: 'Back to Home.',
+  homeBrand: 'mainLogo.png'
 }
 
 // Export named variables
