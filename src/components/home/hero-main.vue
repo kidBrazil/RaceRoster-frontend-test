@@ -42,6 +42,13 @@ export default {
   @media #{$landscape} {
     width: 50%;
   }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 30px;
+  }
 }
 /*--------------------------------------*/
 
