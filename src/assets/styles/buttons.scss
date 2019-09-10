@@ -12,18 +12,14 @@
   background: $color-default;
   display: inline-block;
   width: auto;
-  border: none;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 10px;
-  transition: .4s;
+  transition: all .4s;
 
   &:hover,
   &:focus,
   &:active {
-    border: none;
-    color: lighten($color-font-primary, 10%);
-    background: darken($color-default, 5%);
     transform: scale3d(1.1, 1.1, 1.1);
   }
 
@@ -44,4 +40,26 @@
   &.--pill{
     border-radius: 25px;
   }
+}
+
+// Brand Colors
+.--primary {
+  background: $color-brand-primary;
+  color: $white;
+}
+.--primary-g {
+  background: linear-gradient(41.55deg, $color-brand-primary 0%, $color-brand-accent 100%);
+  color: $white;
+}
+.--secondary {
+  background: $color-brand-secondary;
+  color: $white;
+}
+.--secondary-g {
+  background: linear-gradient(221.55deg, $color-brand-secondary-accent 0%, $color-brand-secondary 100%);
+  color: $white;
+}
+.--font {
+  background: $color-font-primary;
+  color: $white;
 }

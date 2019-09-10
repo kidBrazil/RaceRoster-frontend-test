@@ -13,29 +13,47 @@ let navigation = {
   // Refer to routes.js file for available routes.
   links: [
     {
-      linkName: 'Link 1',
-      linkTitle: 'Link 1',
-      route: '/'
+      linkName: 'Log-In',
+      linkTitle: 'Login to your account.',
+      linkClass: false,
+      route: '#'
     },
     {
-      linkName: 'Link 2',
-      linkTitle: 'Link 2',
-      route: '/about'
+      linkName: 'Sign-Up',
+      linkTitle: 'Sign Up to our service.',
+      linkClass: 'blk-base-btn --pill --med --primary-g',
+      route: '#'
     },
-    {
-      linkName: 'Link 3',
-      linkTitle: 'Link 3',
-      route: '/auth'
-    }
   ]
 };
 
 // General App data
 let generalApp = {
   homeLink: '#',
-  homeTitle: 'Home',
-  homeBrand: 'main-logo.png'
+  homeTitle: 'Back to Home.',
+  homeBrand: 'mainLogo.png'
+};
+
+// Social media
+let socialMedia = {
+  links: [
+    {
+      a11y: 'Facebook',
+      route: 'https://facebook.com',
+      iconClass: 'fab fa-facebook-square'
+    },
+    {
+      a11y: 'Twitter',
+      route: 'https://twitter.com',
+      iconClass: 'fab fa-twitter-square'
+    },
+    {
+      a11y: 'Instagram',
+      route: 'https://Instagram.com',
+      iconClass: 'fab fa-instagram'
+    },
+  ]
 }
 
 // Export named variables
-export { navigation, generalApp };
+export { navigation, generalApp, socialMedia };
