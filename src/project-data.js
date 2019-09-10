@@ -32,7 +32,28 @@ let generalApp = {
   homeLink: '#',
   homeTitle: 'Back to Home.',
   homeBrand: 'mainLogo.png'
+};
+
+// Social media
+let socialMedia = {
+  links: [
+    {
+      a11y: 'Facebook',
+      route: 'https://facebook.com',
+      iconClass: 'fab fa-facebook-square'
+    },
+    {
+      a11y: 'Twitter',
+      route: 'https://twitter.com',
+      iconClass: 'fab fa-twitter-square'
+    },
+    {
+      a11y: 'Instagram',
+      route: 'https://Instagram.com',
+      iconClass: 'fab fa-instagram'
+    },
+  ]
 }
 
 // Export named variables
-export { navigation, generalApp };
+export { navigation, generalApp, socialMedia };
