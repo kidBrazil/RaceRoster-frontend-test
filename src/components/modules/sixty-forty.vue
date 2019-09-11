@@ -1,6 +1,6 @@
 <template lang="pug">
   //- Split component, reversible
-  .blk-split.flex.flex-hor-between.flex-vert-center(
+  .blk-split.flex.flex-hor-between.flex-vert-center.flex-wrap(
     :class="{'--reversed' : reverse , '--top' : top}")
     //- First Slot - Dynamic anim class
     .blk-split-6(:class="animClassLeft" v-in-viewport)

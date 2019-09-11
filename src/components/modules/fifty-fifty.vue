@@ -1,6 +1,6 @@
 <template lang="pug">
   //- Split Component
-  .blk-split.flex.flex-hor-between( :class="{ '--reversed': reversed, 'flex-vert-start': top }")
+  .blk-split.flex.flex-hor-between.flex-wrap( :class="{ '--reversed': reversed, 'flex-vert-start': top }")
     //- Animation class is dynamic passed as prop
     .blk-split-5( :class="animClassLeft" v-in-viewport)
       slot(name="leftSlot")

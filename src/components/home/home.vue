@@ -5,7 +5,7 @@
     hero-main.u-text-center
     //- Intro Content Block
     section.blk-intro
-      .blk-main-wrapper.flex.flex-hor-between.flex-vert-start
+      .blk-main-wrapper.flex.flex-hor-between.flex-vert-start.flex-wrap
         .blk-intro-image
           universal-image( source="heart-lamps.png" a11y="Make your events memorable!")
         .blk-intro-content
@@ -142,11 +142,20 @@ export default{
 
   .blk-intro-image {
     width: 30%;
+
+    @media #{$portrait} {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 
   .blk-intro-content {
     width: 70%;
     padding-left: 30px;
+  }
+  @media #{$portrait} {
+    width: 100%;
+    padding-left: 0;
   }
 }
 
