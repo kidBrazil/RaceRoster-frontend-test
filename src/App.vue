@@ -80,11 +80,6 @@ export default {
     if (!window.__PRERENDER_INJECTED) {
       // Load Google Maps - TODO Update API Key with new one for this project
       this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyALuNX3DYRDEE9GnwQutzoKmIpQW7OEyuw', true, true);
-      // Load Google Tag Manager
-      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
-      this.asyncScript( '/js/googletag.js', false, false);
-      // Load Facebook Pixel
-      this.asyncScript( '/js/fbpixel.js', false, false);
     }
   },
 

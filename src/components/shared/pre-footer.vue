@@ -1,7 +1,7 @@
 <template lang="pug">
   //- Prefooter Block
   .blk-pre-footer.blk-dark-Background
-    .blk-main-wrapper.flex.flex-hor-between.flex-vert-stretch
+    .blk-main-wrapper.flex.flex-hor-between.flex-vert-stretch.flex-wrap
       //- Column iterator
       .blk-prefooter-column(v-for="section in sections")
         .blk-prefooter-category
@@ -68,6 +68,12 @@ export default {
   width: 20%;
   padding-right: 30px;
   position: relative;
+
+  @media #{ $portrait } {
+    width: 50%;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
 
   &:last-child {
     padding: 0;

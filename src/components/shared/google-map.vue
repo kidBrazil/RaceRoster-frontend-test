@@ -74,7 +74,7 @@ export default {
       }
 
       let map = new google.maps.Map(document.getElementById('map'), {
-        zoom: zoom,
+        zoom: 15,
         mapTypeId: this.mapData.mapStyle,
         zoomControl: this.mapData.zoom,
         mapTypeControl: this.mapData.controls,

@@ -91,6 +91,11 @@ export default{
     width: 80%;
     right: 0;
     margin-top: 35px;
+
+    @media #{ $portrait } {
+      width: 100%;
+      margin-top: 30px;
+    }
   }
 }
 .blk-acknowledge {
@@ -98,10 +103,7 @@ export default{
   width: 100%;
   transition: opacity .8s;
 
-  @media #{$portrait} {
-    margin-left: 0;
-    margin-top: 40px;
-  }
+
 
   // Check Icon
   .blk-ack-icon {
