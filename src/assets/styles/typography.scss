@@ -189,3 +189,24 @@ a {
   color: $color-brand-primary;
   font-weight: 700;
 }
+
+
+// Category headers
+.blk-prefooter-category {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .29px;
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+
+// PreFooter links
+.blk-footer-link {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .29px;
+  line-height: 19px;
+  margin-bottom: 10px;
+}

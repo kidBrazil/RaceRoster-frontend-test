@@ -1,7 +1,7 @@
 <template lang="pug">
   //- Prefooter Block
   .blk-pre-footer.blk-dark-Background
-    .blk-main-wrapper.flex.flex-hor-betwee.flex-vert-start
+    .blk-main-wrapper.flex.flex-hor-between.flex-vert-stretch
       //- Column iterator
       .blk-prefooter-column(v-for="section in sections")
         .blk-prefooter-category
@@ -10,6 +10,7 @@
         router-link(
           v-for="link in section.links"
           :to="link.route"
+          class="blk-footer-link"
           :title="link.a11y")
             |{{ link.linkName }}
 
@@ -18,21 +19,20 @@
         .blk-prefooter-category
           |Contact
         //- Links
-        a(:href="contact.phoneLink" :title="contact.phoneA11y")
+        a.blk-footer-link(:href="contact.phoneLink" :title="contact.phoneA11y")
           i.fa.fa-phone
           |{{contact.phone}}
 
-        a(:href="contact.emailLink" :title="contact.emailA11y")
+        a.blk-footer-link(:href="contact.emailLink" :title="contact.emailA11y")
           i.fas.fa-envelope
           |{{contact.email}}
 
-        a(:href="contact.addressLink" :title="contact.addressA11y")
+        a.blk-footer-link(:href="contact.addressLink" :title="contact.addressA11y")
           i.fas.fa-map-marker-alt
           |{{contact.address}}
       //- Google Maps
-      .blk-prefooter-column
-        .blk-map-content
-          google-maps(:initMap="init" :mapData="mapData")
+      a.blk-prefooter-column(:href="contact.addressLink" :title="contact.addressA11y" target="_blank")
+        google-maps(:initMap="init" :mapData="mapData")
 </template>
 
 
@@ -63,18 +63,19 @@ export default {
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
-
-.blk-map-content {
-  width: 100%;
-  height: 400vh;
-  position: relative;
-}
-
+// Footer Columns
 .blk-prefooter-column {
-  width: 25%;
+  width: 20%;
+  padding-right: 30px;
+  position: relative;
+
+  &:last-child {
+    padding: 0;
+  }
 }
 
 
+// Google Maps
 .blk-g-map {
   position: absolute;
   top: 0;
