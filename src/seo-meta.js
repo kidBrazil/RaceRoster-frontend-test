@@ -13,7 +13,7 @@
 // Facbeook / Twitter debugger panels.
 //
 // TODO -- Change stagingBuild to FALSE before live deploy.
-let stagingBuild = true;
+let stagingBuild = false;
 
 // Template INFO - Dictates slug for title and site URL's
 let template = {
