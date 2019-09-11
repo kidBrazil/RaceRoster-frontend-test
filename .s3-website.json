@@ -7,6 +7,6 @@
    "corsConfiguration": [],
    "enableCloudfront": false,
    "retries": 20,
-   "domain": "boiltest",
+   "domain": "frontend-test-raceroster",
    "configFile": ".s3-website.json"
 }
