@@ -1,6 +1,6 @@
 <template lang="pug">
   //- Split Component
-  .blk-split.flex.flex-hor-between.flex-vert-center( :class="{ '--reversed': reversed, '--top': top }")
+  .blk-split.flex.flex-hor-between( :class="{ '--reversed': reversed, 'flex-vert-start': top }")
     //- Animation class is dynamic passed as prop
     .blk-split-5( :class="animClassLeft" v-in-viewport)
       slot(name="leftSlot")
@@ -26,7 +26,7 @@
 /*--------------------------------------*/
 .blk-split-5 {
   width: 50%;
-  padding-right: 1vw;
+  position: relative;
 
   @media #{ $portrait } {
     width: 100%;

@@ -7,14 +7,16 @@ form {
 
 /* stylelint-disable */
 /* Disabled because it is valid and I need this level of control*/
+
+// Form error message below labels
 .blk-error-message {
   display: none;
   color: red;
   margin-top: 20px;
 }
 
+// Error class
 .blk-error {
-
   input {
     border: 1px solid red!important;
     color: red!important;
@@ -89,12 +91,13 @@ input {
 /* Disabled for important so it can override on all instances */
 /* stylelint-disable */
 
+// Form error message at the top
 .blk-form-error {
   width: 100;
   display: block;
   color: $white;
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 15px;
 }
 .--success {
   background: $color-success !important;

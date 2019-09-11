@@ -1,25 +1,40 @@
 <template>
-  <section class="blk-full-section --accent-bkg --triangle-top --form-padding">
+  <section class="blk-main-wrapper">
     <div class="blk-main-form">
       <h1 class="u-bold">Book A Demo</h1>
       <!-- Split Component 60 / 40 Reversed -->
-      <split-sixty :reverse="false" :top="false">
+      <split-fifty :reverse="false" :top="true">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
           <base-form
             v-on:submitted="swapForm"
             v-if="!formSubmitted" data-form></base-form>
           <div class="blk-acknowledge u-text-center" v-if="formSubmitted" data-form-thankyou>
-            <p>
-              Thanks!
-            </p>
+            <div class="flex flex-hor-start flex-vert-center">
+              <div class="blk-ack-icon --secondary-g">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="blk-ack-content">
+                <h2 class="u-bold">
+                  Demo request sent!
+                </h2>
+                <p>
+                  Someone will reach out to schedule your demo within the next 48 business hours
+                </p>
+                <a href="#" title="Request Another Demo" class="blk-main-link">
+                  Request another demo
+                </a>
+              </div>
+            </div>
           </div>
         </template>
 
         <template slot="rightSlot">
-
+          <div class="flex flex-hor-end">
+            <universal-image source="event-picture.png" a11y="Request a demo form our team!"></universal-image>
+          </div>
         </template>
-      </split-sixty>
+      </split-fifty>
     </div>
   </section>
 </template>
@@ -27,20 +42,12 @@
 <script>
 // Imports
 import BaseForm     from '../modules/form-fields.vue';
-import SplitSixty   from '../modules/sixty-forty.vue';
+import SplitFifty   from '../modules/fifty-fifty.vue';
 
 export default{
   name: 'ContactForm',
   data: function() {
     return{
-      // Button Data
-      BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
-        btnClass: 'blk-btn blk-form-btn --space-top-sm'
-      },
-      thankyouIcon: 'contact/blk_FORM_airplane.svg',
-      // Form submission flag for animations
       formSubmitted: false
     };
   },
@@ -67,7 +74,7 @@ export default{
   },
   components: {
     'base-form'     : BaseForm,
-    'split-sixty'   : SplitSixty
+    'split-fifty'   : SplitFifty
   }
 };
 </script>
@@ -76,89 +83,50 @@ export default{
 /*-------------------------------------*/
 /* Contact--Form Component Styles
 /--------------------------------------*/
-.--form-padding {
-  padding: 250px 0 150px;
-  @media #{$portrait} {
-    padding: 125px 0 75px;
-  }
-  @media #{$phone-only} {
-    padding: 125px 0 50px;
-  }
-}
-.blk-form-title {
-  font-size: 7.9vw;
-  font-weight: 900;
-  letter-spacing: 2px;
-  @media #{$portrait} {
-    font-size: 13.2vw;
-  }
-  @media #{$phone-only} {
-    font-size: 17.2vw;
-  }
-}
-.blk-form-subtitle {
-  font-size: 1.8vw;
-  font-weight: 300;
-  @media #{$portrait} {
-    font-size: 3.2vw;
-  }
-}
 .blk-main-form {
   width: 100%;
-  padding: 0 10%;
-  color: $color-brand-bkg;
-  .blk-social-links {
-    font-size: 380%;
-    margin: 2vw 0;
-    @media #{$portrait} {
-      margin: 30px 0;
-      font-size: 9vw;
-    }
-    @media #{$phone-only} {
-      margin: 20px 0;
-      font-size: 12vw;
-    }
-    @media #{$laptop-only} {
-      font-size: 3vw;
-    }
-    a {
-      display: block;
-      margin: 0 4%;
-      @media #{$phone-only} {
-        margin: 0 6%;
-      }
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-  form {
-    margin-left: 40px;
-    transition: opacity .8s;
-    @media #{$portrait} {
-      margin-left: 0;
-      margin-top: 40px;
-    }
+  padding: 100px 0;
+
+  picture {
+    width: 80%;
+    right: 0;
+    margin-top: 35px;
   }
 }
 .blk-acknowledge {
   opacity: 0;
   width: 100%;
-  margin-left: 40px;
   transition: opacity .8s;
-  padding: 2% 10%;
+
   @media #{$portrait} {
     margin-left: 0;
     margin-top: 40px;
   }
-  p {
-    padding-top: 15px;
+
+  // Check Icon
+  .blk-ack-icon {
+    width: 20%;
+    padding-top: 20%;
+    color: $white;
+    position: relative;
+    font-size: 50px;
+    border-radius: 100%;
+
+    i {
+      @include center(both);
+    }
   }
-  img {
-    width: 100%;
+
+  // Text content
+  .blk-ack-content {
+    width: 60%;
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  h2,
+  p {
+    margin-bottom: 10px;
   }
 }
 .--form-sent {

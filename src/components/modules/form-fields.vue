@@ -51,6 +51,7 @@
         data-email
         v-model="email"
         name="email"
+        v-on:blur="validateEmail"
         tab-index="0"
         aria-required="true"
         :aria-label="$t('contact.fields.fname')"
@@ -71,6 +72,7 @@
         v-model="phone"
         name="phone"
         tab-index="0"
+        v-on:blur="validatePhone"
         aria-required="true"
         :aria-label="$t('contact.fields.fname')"
         type="text">
@@ -103,9 +105,7 @@ export default{
   name: 'BaseForm',
   data: function(){
     return {
-      // Data used here as a flag to mark fields as
-      // filled witn the .--filled class
-      // Allows for better UI control
+      // Field Data
       fname       : '',
       lname     : '',
       phone       : '',
@@ -149,13 +149,13 @@ export default{
           callback();
         })
         .catch(function (error) {
-          alertify.error(this.$t("validation.errors.fail"));
+          alertify.error(this.$t("Something went wrong with the server."));
         });
       }
       // Else, likely SPAM
       else {
         this.errors = true;
-        console.log(this.$t("validation.errors.spam"));
+        console.log(this.$t("This looks like spam, please try again."));
       }
     },
     // Emit Submitted event upon Ajax success
@@ -170,8 +170,7 @@ export default{
       let error = this.$t("validation.errors.email");
       // Email Regex with up to 7 trailing chars for .digital TLD
       if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/.test(event.target.value)){
-        alertify.warning(error);
-        event.target.classList.add('blk-error');
+        event.target.parentNode.classList.add('blk-error');
       }
     },
     // Validate NA phone number
@@ -182,8 +181,7 @@ export default{
       let error = this.$t("validation.errors.phone");
       // North America Phone Regex
       if (!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(event.target.value)){
-        alertify.warning(error);
-        event.target.classList.add('blk-error');
+        event.target.parentNode.classList.add('blk-error');
       }
     }
   }
