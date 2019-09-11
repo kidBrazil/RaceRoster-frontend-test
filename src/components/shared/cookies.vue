@@ -4,19 +4,19 @@
       <!-- Cookies Text Content -->
       <div class="blk-cookies-content">
         <span class="--title u-bold u-uppercase">
-          HEADING GOES HERE
+          This site uses cookies to better serve you!
         </span>
         <p class="--text">
-          TEXT GOES HERE
+          Some awesome text here about how this company totally does not misuse your data in any way. We certainly won't sell it to the highest bidder if that is what you are asking. Now click the nice accept button please!
         </p>
       </div>
       <!-- Action -->
       <div class="blk-cookies-action">
         <button
           v-on:click="acceptCookie"
-          class="blk-btn blk-primary-btn"
+          class="blk-base-btn --pill --med --secondary-g"
           :class="{ 'fully-in-viewport' : active }">
-           BUTTON TEXT HERE
+           Accept Cookies
         </button>
       </div>
     </div>

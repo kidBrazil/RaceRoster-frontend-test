@@ -20,6 +20,8 @@
     //- Youtube Embed
     section.blk-dark-Background.u-text-center
       youtube(video-id="m_KBvP0_8Tc")
+    //- Request demo
+    request-demo
     //- PreFooter
     pre-footer(
       :sections="prefooterData.sections"
@@ -33,6 +35,7 @@
 <script>
 //Local Component registration
 import HeroMain           from './hero-main.vue';
+import RequestDemo           from './request-demo.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
 import { preFooter }      from '../../project-data.js';
@@ -119,7 +122,8 @@ export default{
   },
 
   components: {
-    'hero-main'         : HeroMain
+    'hero-main'         : HeroMain,
+    'request-demo'      : RequestDemo
   }
 };
 </script>
