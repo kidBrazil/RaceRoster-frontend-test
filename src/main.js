@@ -34,8 +34,8 @@ Vue.use(checkView);
 
 // [ Validator Plugin ] ----------- Uncomment to use
 // Form Validation Plugin
-//import Validate from './plugins/validate.js';
-//Vue.use(Validate);
+import Validate from './plugins/validate.js';
+Vue.use(Validate);
 
 // [ i18n - Internationalization ] ----------------------
 

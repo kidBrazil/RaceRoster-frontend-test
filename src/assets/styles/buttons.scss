@@ -40,6 +40,12 @@
   &.--pill{
     border-radius: 25px;
   }
+
+  &.--submit {
+    background: $color-success;
+    color: $white;
+    border: none;
+  }
 }
 
 // Brand Colors
