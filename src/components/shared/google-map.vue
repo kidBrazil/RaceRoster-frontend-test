@@ -1,6 +1,6 @@
-<template>
+<template lang="pug">
       <!-- Map Container for Maps API -->
-      <div class="blk-g-map" id="map"></div>
+      div(class="blk-g-map" id="map")
 </template>
 
 <script>
@@ -17,15 +17,6 @@ export default {
       // Styles imported from file
       GStyles: MapStyles
     };
-  },
-
-  watch: {
-    initMap: function(newVal, oldVal) { // watch it
-      // Request frame...
-      requestAnimationFrame(() => {
-        this.setupMap();
-      });
-    }
   },
 
   mounted: function() {
@@ -45,6 +36,11 @@ export default {
         });
       } ,resizeTime);
     });
+    // Hack needed for now as the layout was loading before
+    // the response from the Google API.
+    setTimeout(() => {
+          this.setupMap();
+    }, 100);
   },
 
   methods: {

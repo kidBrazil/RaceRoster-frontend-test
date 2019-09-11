@@ -55,5 +55,75 @@ let socialMedia = {
   ]
 }
 
+// PreFooter
+let preFooter = {
+  sections: [
+    {
+      category: 'Features',
+      links: [
+        {
+          linkName: 'Event organizer tools',
+          a11y: 'Event Tools',
+          route: '#'
+        },
+        {
+          linkName: 'Timer tools',
+          a11y: 'Timer tools',
+          route: '#'
+        },
+        {
+          linkName: 'Charity co-ordinator tools',
+          a11y: 'Charity co-ordinator tools',
+          route: '#'
+        },
+        {
+          linkName: 'Participant experience',
+          a11y: 'Participant experience',
+          route: '#'
+        },
+      ]
+    },
+    {
+      category: 'Tools',
+      links: [
+        {
+          linkName: 'Dashboard maker',
+          a11y: 'Dashboard maker',
+          route: '#'
+        },
+        {
+          linkName: 'Data & analytics',
+          a11y: 'Data & analytics',
+          route: '#'
+        },
+        {
+          linkName: 'Email marketing tool',
+          a11y: 'Email marketing tool',
+          route: '#'
+        },
+        {
+          linkName: 'Social promotion tool',
+          a11y: 'Social promotion tool',
+          route: '#'
+        },
+      ]
+    },
+  ],
+  contactInfo: {
+    phone: '1-888-555-5555',
+    phoneLink: 'tel:18885555555',
+    phoneA11y: 'Phone Number',
+    email: 'example@example.com',
+    emailLink: 'mailto:example@example.com',
+    emailA11y: 'Email Address',
+    address: '123 Fake Street, London, ON A1B2C3',
+    addressLink: 'https://www.google.ca/maps/place/103+King+St,+London,+ON+N6A+6K1/data=!4m2!3m1!1s0x882ef21d8c9d59fb:0xa637ea9287d6c236?sa=X&ved=2ahUKEwjCxMb088jkAhUKWK0KHRICAwcQ8gEwAHoECAkQAQ',
+    addressA11y: 'Street Address'
+  },
+  mapInfo: {
+
+  }
+}
+
 // Export named variables
-export { navigation, generalApp, socialMedia };
+export { navigation, generalApp, socialMedia, preFooter };

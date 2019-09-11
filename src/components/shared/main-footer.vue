@@ -1,5 +1,5 @@
 <template lang="pug">
-  .blk-main-Footer
+  footer.blk-main-Footer
     .blk-main-wrapper.flex.flex-hor-between.flex-vert-center
       .blk-footer-copyright
         |&#169; Copyright Acme Inc. {{ year }}

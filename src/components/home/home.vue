@@ -17,17 +17,25 @@
             |Just let go - and fall like a little waterfall. Nothing's gonna make your husband or wife madder than coming home and having a snow-covered dinner. Just pretend you are a whisper floating across a mountain. Zip. That easy.
           a.blk-main-link.spacing-large(href="#" title="View our feature list.")
             |View full feature list
+    //- Youtube Embed
     section.blk-dark-Background.u-text-center
       youtube(video-id="m_KBvP0_8Tc")
+    //- PreFooter
+    pre-footer(
+      :sections="prefooterData.sections"
+      :contact="prefooterData.contactInfo"
+      :map="prefooterData.mapInfo"
+      :mapData="mapData")
     //- Main Footer
     main-footer
 </template>
-<script>
 
+<script>
 //Local Component registration
 import HeroMain           from './hero-main.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
+import { preFooter }      from '../../project-data.js';
 
 export default{
   name: 'HomePage',
@@ -35,7 +43,19 @@ export default{
 
   data: function(){
     return {
-
+      prefooterData: preFooter,
+      mapData: {
+        pinLocation:  {lat: 42.9817428, lng: -81.2537265},
+        mapCenter: {lat: 42.9817428, lng: -81.2537265},
+        //mapIcon: require('../../assets/images/map/location-ICON.png'),
+        mapStyle: 'hybrid',
+        zoom: false,
+        controls: false,
+        kbShortcuts: false,
+        scroll: false,
+        drag: false,
+        zoomLevel: 17.2
+      }
     };
   },
   // Meta SEO Function
