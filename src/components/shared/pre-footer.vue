@@ -18,27 +18,44 @@
         .blk-prefooter-category
           |Contact
         //- Links
-        a(href="tel:18885555555" title="Phone Number")
+        a(:href="contact.phoneLink" :title="contact.phoneA11y")
           i.fa.fa-phone
-          |1-888-555-5555
+          |{{contact.phone}}
 
-        a(href="tel:18885555555" title="Phone Number")
-          i.fa.fa-phone
-          |1-888-555-5555
+        a(:href="contact.emailLink" :title="contact.emailA11y")
+          i.fas.fa-envelope
+          |{{contact.email}}
 
-        a(href="tel:18885555555" title="Phone Number")
-          i.fa.fa-phone
-          |1-888-555-5555
+        a(:href="contact.addressLink" :title="contact.addressA11y")
+          i.fas.fa-map-marker-alt
+          |{{contact.address}}
+      //- Google Maps
+      .blk-prefooter-column
+        .blk-map-content
+          google-maps(:initMap="init" :mapData="mapData")
 </template>
 
 
 
 
 <script>
+// Import Map component
+import GoogleMaps from './google-map.vue';
 
 export default {
   name: 'PreFooter',
-  props: [ 'sections', 'contact', 'map']
+  props: [ 'sections', 'contact', 'map', 'mapData'],
+
+  data: function() {
+    return {
+      // Styles imported from file
+      init: true
+    };
+  },
+
+  components: {
+    'google-maps': GoogleMaps
+  }
 };
 </script>
 
@@ -47,6 +64,25 @@ export default {
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
 
+.blk-map-content {
+  width: 100%;
+  height: 400vh;
+  position: relative;
+}
+
+.blk-prefooter-column {
+  width: 25%;
+}
+
+
+.blk-g-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
 
 /*--------------------------------------*/
 

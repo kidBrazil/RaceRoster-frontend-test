@@ -24,17 +24,18 @@
     pre-footer(
       :sections="prefooterData.sections"
       :contact="prefooterData.contactInfo"
-      :map="prefooterData.mapInfo")
+      :map="prefooterData.mapInfo"
+      :mapData="mapData")
     //- Main Footer
     main-footer
 </template>
-<script>
 
+<script>
 //Local Component registration
 import HeroMain           from './hero-main.vue';
 // Import SEO From File
 import { stagingBuild, template, social, general }       from '../../seo-meta.js';
-import { preFooter } from '../../project-data.js';
+import { preFooter }      from '../../project-data.js';
 
 export default{
   name: 'HomePage',
@@ -42,7 +43,19 @@ export default{
 
   data: function(){
     return {
-      prefooterData: preFooter
+      prefooterData: preFooter,
+      mapData: {
+        pinLocation:  {lat: 42.9817428, lng: -81.2537265},
+        mapCenter: {lat: 42.9817428, lng: -81.2537265},
+        //mapIcon: require('../../assets/images/map/location-ICON.png'),
+        mapStyle: 'hybrid',
+        zoom: false,
+        controls: false,
+        kbShortcuts: false,
+        scroll: false,
+        drag: false,
+        zoomLevel: 17.2
+      }
     };
   },
   // Meta SEO Function

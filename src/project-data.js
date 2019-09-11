@@ -111,8 +111,14 @@ let preFooter = {
   ],
   contactInfo: {
     phone: '1-888-555-5555',
+    phoneLink: 'tel:18885555555',
+    phoneA11y: 'Phone Number',
     email: 'example@example.com',
-    address: '123 Fake Street, London, ON A1B2C3'
+    emailLink: 'mailto:example@example.com',
+    emailA11y: 'Email Address',
+    address: '123 Fake Street, London, ON A1B2C3',
+    addressLink: 'https://www.google.ca/maps/place/103+King+St,+London,+ON+N6A+6K1/data=!4m2!3m1!1s0x882ef21d8c9d59fb:0xa637ea9287d6c236?sa=X&ved=2ahUKEwjCxMb088jkAhUKWK0KHRICAwcQ8gEwAHoECAkQAQ',
+    addressA11y: 'Street Address'
   },
   mapInfo: {
 
